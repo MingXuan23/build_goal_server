@@ -15,8 +15,10 @@ services:
     ports:
       - "3360:3306"  # Keep the MySQL port mapping as is
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword  # Change this to a secure password
-      MYSQL_DATABASE: mydatabase  # Change this to your desired database name
+      MYSQL_DATABASE: ${LOCAL_DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${LOCAL_DB_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${LOCAL_DB_PASSWORD}
+      MYSQL_USER: ${LOCAL_DB_USER}
     volumes:
       - mysql-data:/var/lib/mysql  # Persist MySQL data
 

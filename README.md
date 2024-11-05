@@ -14,6 +14,14 @@ get the docker at here https://docs.docker.com/get-docker/
 
 
    This will start the server on `http://localhost:3000` with hot-reloading enabled.
+3. Database Migration and Seeder
+
+```
+npx knex migrate:latest --env development
+```
+npx knex seed:run --env development
+```
+
 
 ## Running in Production
 
