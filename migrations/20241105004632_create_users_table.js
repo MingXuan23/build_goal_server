@@ -12,7 +12,7 @@ exports.up = function(knex) {
         table.string('state').nullable(); // State, nullable
         table.string('email').nullable(); // Email, nullable
         table.string('status').nullable(); // Status, nullable
-        table.json('role').nullable(); // Role, nullable, stored as JSON
+        table.json('role').nullable(); // Role, nullable, stored as JSON [1,2]
         table.boolean('active').defaultTo(true); // Active status, defaults to true
         table.timestamps(true, true); // Created at & Updated at timestamps
       });
