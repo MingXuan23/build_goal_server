@@ -4,7 +4,7 @@ get the docker at here https://docs.docker.com/get-docker/
 
 ## Getting Started
 
-1. Clone this repository
+1. Clone this repository and copy .env file into project
 
 2. Build and run the Docker container in development mode
 
