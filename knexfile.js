@@ -22,6 +22,20 @@ module.exports = {
     }
   },
 
+  docker: {
+    client: 'mysql2',
+    connection: {
+      host: 'build_goal_server-mysql-1',
+      port: 3306,
+      user: process.env.LOCAL_DB_USER,
+      password: process.env.LOCAL_DB_PASSWORD,
+      database: process.env.LOCAL_DB_NAME
+    },
+    migrations: {
+      directory: './migrations'
+    }
+  },
+
   production: {
     client: 'postgresql',
     connection: {

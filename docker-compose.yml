@@ -13,7 +13,7 @@ services:
   mysql:
     image: mysql:8.0
     ports:
-      - "3360:3306"  # Keep the MySQL port mapping as is
+      - "${LOCAL_DB_PORT}:3306"  # Keep the MySQL port mapping as is
     environment:
       MYSQL_DATABASE: ${LOCAL_DB_NAME}
       MYSQL_ROOT_PASSWORD: ${LOCAL_DB_ROOT_PASSWORD}
@@ -28,7 +28,7 @@ services:
       - "8006:80"  # Expose phpMyAdmin on port 8080
     environment:
       PMA_HOST: mysql  # Link phpMyAdmin to the MySQL service
-      PMA_PORT: 3360  # The MySQL port
+      PMA_PORT: ${LOCAL_DB_PORT}  # The MySQL port
     depends_on:
       - mysql  # Wait for MySQL to be up before starting phpMyAdmin
 
